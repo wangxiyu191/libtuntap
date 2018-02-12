@@ -2,7 +2,7 @@
 # ====================================
 
 include_directories(
-    "${CMAKE_CURRENT_SOURCE_DIR}"/bindings/cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/bindings/cpp
 )
 
 add_library(tuntap++ SHARED
@@ -20,4 +20,6 @@ set_target_properties(tuntap++-static PROPERTIES OUTPUT_NAME "tuntap++")
 target_link_libraries(tuntap++ tuntap) 
 
 target_link_libraries(tuntap++-static tuntap)
+
+target_include_directories(tuntap++ INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/bindings/cpp)
 

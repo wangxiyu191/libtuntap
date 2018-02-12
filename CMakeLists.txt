@@ -124,6 +124,7 @@ if(UNIX)
 	install(TARGETS tuntap DESTINATION lib)
 	install(TARGETS tuntap-static DESTINATION lib)
 	install(FILES tuntap.h DESTINATION include)
+    target_include_directories(tuntap INTERFACE ${CMAKE_CURRENT_SOURCE_DIR})
 endif(UNIX)
 
 include(CMakeLists.txt.local OPTIONAL)
